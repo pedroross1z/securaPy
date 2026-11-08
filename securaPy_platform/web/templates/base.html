@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}SecuraPy Platform{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <h1>SecuraPy Platform</h1>
+  {% if usuario %}
+  <form method="post" action="{{ url_for('web.logout') }}" class="linha">
+    <span>{{ usuario.nome }} (nível {{ usuario.nivel }})</span>
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <button>Sair</button>
+  </form>
+  {% endif %}
+</header>
+<main>
+  {% for m in get_flashed_messages() %}<div class="flash">{{ m }}</div>{% endfor %}
+  {% block conteudo %}{% endblock %}
+</main>
+</body>
+</html>

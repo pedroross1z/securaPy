@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block titulo %}{{ d.ip }} · SecuraPy{% endblock %}
+{% block conteudo %}
+<section><h2>IP {{ d.ip }} {% if d.na_blacklist %}<span class="tag CRITICA">blacklist</span>{% endif %}</h2>
+  <p><a href="{{ url_for('web.dashboard') }}">← Dashboard</a></p>
+</section>
+<div class="grid">
+  <section><h2>Geolocalização</h2>
+    {% set g = d.geolocalizacao %}
+    <table>
+      <tr><td>Cidade</td><td>{{ g.cidade or g.erro or '-' }}</td></tr>
+      <tr><td>País</td><td>{{ g.pais or '-' }}</td></tr>
+      <tr><td>Organização</td><td>{{ g.org or '-' }}</td></tr>
+    </table>
+  </section>
+  <section><h2>Risco (ML)</h2>
+    {% if d.score_ml %}
+    <p><span class="tag {{ d.score_ml.nivel }}">{{ d.score_ml.nivel }}</span>
+       <span class="tag {{ d.score_ml.rotulo }}">{{ d.score_ml.rotulo }}</span> score {{ '%.2f'|format(d.score_ml.score) }}</p>
+    {% else %}<p>Sem eventos para pontuar.</p>{% endif %}
+  </section>
+  <section><h2>Assistente (LLM)</h2>
+    {% if d.explicacao %}
+    <p><span class="tag {{ d.explicacao.rotulo }}">{{ d.explicacao.rotulo }}</span></p>
+    <p>{{ d.explicacao.explicacao }}</p>
+    <p><small>origem: {{ d.explicacao.origem }}</small></p>
+    {% else %}<p>Sem dados.</p>{% endif %}
+  </section>
+</div>
+<section><h2>Alertas ({{ d.alertas|length }})</h2>
+  <table>{% for a in d.alertas %}<tr><td>{{ a.timestamp }}</td><td><span class="tag {{ a.severidade }}">{{ a.severidade }}</span></td>
+    <td>{{ a.regra_nome }}</td><td>{{ a.descricao }}</td></tr>{% else %}<tr><td>Nenhum alerta.</td></tr>{% endfor %}</table>
+</section>
+<section><h2>Eventos ({{ d.eventos|length }})</h2>
+  <table>{% for e in d.eventos %}<tr><td>{{ e.timestamp }}</td><td>{{ e.fonte }}</td><td>{{ e.tipo }}</td><td>{{ e.detalhes }}</td></tr>
+  {% else %}<tr><td>Nenhum evento.</td></tr>{% endfor %}</table>
+</section>
+{% endblock %}

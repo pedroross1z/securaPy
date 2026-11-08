@@ -1,0 +1,63 @@
+# SecuraPy Platform: API + MongoDB + MySQL na mesma rede.
+#   python scripts/gerar_env.py && docker compose up -d --build
+# Os bancos NAO publicam portas no host (so a API enxerga) - menor superficie de ataque.
+name: securapy
+
+services:
+  api:
+    build: .
+    container_name: securapy_api
+    env_file: .env
+    environment:
+      MONGO_URI: mongodb://mongo:27017/
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      ALERTAS_ATIVO: "1"
+      COOKIE_SEGURO: "0"        # 1 quando houver HTTPS na frente
+    ports:
+      - "5000:5000"             # API + dashboard
+      - "9999:9999"             # alertas em tempo real (socket TCP)
+    depends_on:
+      mongo:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    networks: [securapy_net]
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    container_name: securapy_mongo
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [securapy_net]
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8
+    container_name: securapy_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD:?defina MYSQL_PASSWORD no .env}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-securapy}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    networks: [securapy_net]
+    restart: unless-stopped
+
+networks:
+  securapy_net:
+
+volumes:
+  mongo_data:
+  mysql_data:

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block titulo %}Dashboard · SecuraPy{% endblock %}
+{% block conteudo %}
+<div class="grid">
+  <section><h2>Eventos por fonte</h2>
+    <table>{% for fonte, total in resumo.eventos_por_fonte.items() %}<tr><td>{{ fonte }}</td><td>{{ total }}</td></tr>
+    {% else %}<tr><td>Nenhum evento. Execute uma análise.</td></tr>{% endfor %}</table>
+    <p>Total: <strong>{{ resumo.total_eventos }}</strong></p>
+  </section>
+  <section><h2>Alertas por severidade</h2>
+    <table>{% for sev, total in resumo.alertas_por_severidade.items() %}
+    <tr><td><span class="tag {{ sev }}">{{ sev }}</span></td><td>{{ total }}</td></tr>{% endfor %}</table>
+  </section>
+  <section><h2>Ações</h2>
+    <form method="post" action="{{ url_for('web.executar_analise') }}" class="linha">
+      <input type="hidden" name="csrf" value="{{ csrf_token() }}"><button>Analisar logs</button></form>
+    <h2>Buscar IP</h2>
+    <form method="get" action="{{ url_for('web.buscar_ip') }}" class="linha">
+      <input name="q" placeholder="185.220.101.1" required maxlength="45"><button>Buscar</button></form>
+  </section>
+</div>
+
+<section><h2>Top 10 IPs suspeitos (risco de ML)</h2>
+  <table><tr><th>IP</th><th>Score</th><th>Nível</th><th>Rótulo</th><th>FAILs</th><th>Portas</th><th>Blacklist</th></tr>
+  {% for s in suspeitos %}
+  <tr><td><a href="{{ url_for('web.pagina_ip', ip=s.ip) }}">{{ s.ip }}</a></td><td>{{ '%.2f'|format(s.score) }}</td>
+      <td><span class="tag {{ s.nivel }}">{{ s.nivel }}</span></td><td><span class="tag {{ s.rotulo }}">{{ s.rotulo }}</span></td>
+      <td>{{ s.features.n_fail }}</td><td>{{ s.features.portas_distintas }}</td><td>{{ 'sim' if s.features.em_blacklist else 'não' }}</td></tr>
+  {% else %}<tr><td colspan="7">Sem dados.</td></tr>{% endfor %}</table>
+</section>
+
+<section><h2>Alertas recentes</h2>
+  <table><tr><th>Hora</th><th>Severidade</th><th>Regra</th><th>IP</th><th>Descrição</th></tr>
+  {% for a in alertas %}
+  <tr><td>{{ a.timestamp }}</td><td><span class="tag {{ a.severidade }}">{{ a.severidade }}</span></td>
+      <td>{{ a.regra_nome }}</td><td><a href="{{ url_for('web.pagina_ip', ip=a.ip) }}">{{ a.ip }}</a></td>
+      <td>{{ a.descricao }}</td></tr>
+  {% else %}<tr><td colspan="5">Nenhum alerta.</td></tr>{% endfor %}</table>
+</section>
+
+<section><h2>Cadastrar alerta manual</h2>
+  <form method="post" action="{{ url_for('web.novo_alerta') }}" class="linha">
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <input name="regra_nome" placeholder="Nome da regra" required maxlength="100">
+    <select name="severidade">{% for s in severidades %}<option>{{ s }}</option>{% endfor %}</select>
+    <input name="ip" placeholder="IP de origem" required maxlength="45">
+    <input name="descricao" placeholder="Descrição" size="40" maxlength="500">
+    <button>Cadastrar</button>
+  </form>
+</section>
+{% endblock %}

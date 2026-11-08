@@ -1,0 +1,34 @@
+{
+  "amostras_treino": 675,
+  "amostras_teste": 225,
+  "validacao_cruzada_5_folds": {
+    "precision": {
+      "media": 0.929,
+      "desvio": 0.02
+    },
+    "recall": {
+      "media": 0.94,
+      "desvio": 0.025
+    },
+    "f1": {
+      "media": 0.934,
+      "desvio": 0.022
+    }
+  },
+  "teste": {
+    "precisao": 0.93,
+    "recall": 0.964,
+    "f1": 0.947,
+    "matriz_confusao": [
+      [
+        136,
+        6
+      ],
+      [
+        3,
+        80
+      ]
+    ]
+  },
+  "aviso": "dados de treino sinteticos (ver ml/dados_treino.py)"
+}

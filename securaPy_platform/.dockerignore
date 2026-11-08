@@ -1,0 +1,11 @@
+.env
+.git
+__pycache__/
+*.pyc
+.pytest_cache/
+testes/
+saida/
+ml/modelo.pkl
+ml/modelo.pkl.sha256
+ml/metricas.json
+*.md

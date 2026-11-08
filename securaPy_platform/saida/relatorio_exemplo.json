@@ -1,0 +1,503 @@
+{
+  "alertas_recentes": [
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "pontuação 15 | risco ML 0.95 (ALTO)",
+      "id": "6ae49358fe4d302df0102b40",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "detector",
+      "regra_id": "DET-BRUTE_FORCE+PORT_SCAN+BLACKLIST",
+      "regra_nome": "Ameaça correlacionada: brute_force, port_scan, blacklist",
+      "severidade": "CRITICA",
+      "timestamp": "2026-10-30 12:53:44"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "pontuação 15 | risco ML 0.99 (ALTO)",
+      "id": "6ae49358fe4d302df0102b41",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "detector",
+      "regra_id": "DET-BRUTE_FORCE+PORT_SCAN+BLACKLIST",
+      "regra_nome": "Ameaça correlacionada: brute_force, port_scan, blacklist",
+      "severidade": "CRITICA",
+      "timestamp": "2026-10-30 12:53:44"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "pontuação 5 | risco ML 0.95 (ALTO)",
+      "id": "6ae49358fe4d302df0102b42",
+      "ip": "45.33.32.156",
+      "lote": "logs:f7a6470977",
+      "origem": "detector",
+      "regra_id": "DET-BLACKLIST",
+      "regra_nome": "Ameaça correlacionada: blacklist",
+      "severidade": "MEDIA",
+      "timestamp": "2026-10-30 12:53:44"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso a URL de reconhecimento /shell.php",
+      "id": "6ae49358fe4d302df0102b3f",
+      "ip": "45.33.32.156",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R005",
+      "regra_nome": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:20:28"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso a URL de reconhecimento /phpmyadmin",
+      "id": "6ae49358fe4d302df0102b3e",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R005",
+      "regra_nome": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:20:20"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso a URL de reconhecimento /wp-admin",
+      "id": "6ae49358fe4d302df0102b3d",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R005",
+      "regra_nome": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:20:18"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Padrao de XSS detectado na URL /search?q=<script>alert(1)</script>",
+      "id": "6ae49358fe4d302df0102b3c",
+      "ip": "45.33.32.156",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R004",
+      "regra_nome": "Tentativa de XSS",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:20:15"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Path traversal detectado na URL /../../etc/passwd",
+      "id": "6ae49358fe4d302df0102b3b",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R003",
+      "regra_nome": "Tentativa de Path Traversal",
+      "severidade": "CRITICA",
+      "timestamp": "2025-02-20 08:20:08"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso a URL de reconhecimento /admin",
+      "id": "6ae49358fe4d302df0102b3a",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R005",
+      "regra_nome": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:20:06"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario oracle",
+      "id": "6ae49358fe4d302df0102b30",
+      "ip": "45.33.32.156",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:48"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b2f",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:45"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario root",
+      "id": "6ae49358fe4d302df0102b2e",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:40"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b2d",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:38"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario root",
+      "id": "6ae49358fe4d302df0102b2c",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:33"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b2b",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:30"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario sa",
+      "id": "6ae49358fe4d302df0102b2a",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:28"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b29",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:22"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario root",
+      "id": "6ae49358fe4d302df0102b28",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:18"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b27",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:16"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b26",
+      "ip": "45.33.32.156",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:15"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario root",
+      "id": "6ae49358fe4d302df0102b25",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:12"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b24",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:08"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b23",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:05"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario root",
+      "id": "6ae49358fe4d302df0102b22",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:02"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Tentativa de login com usuario admin",
+      "id": "6ae49358fe4d302df0102b21",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R001",
+      "regra_nome": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "timestamp": "2025-02-20 08:15:01"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 445",
+      "id": "6ae49358fe4d302df0102b39",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:33"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 5432",
+      "id": "6ae49358fe4d302df0102b38",
+      "ip": "45.33.32.156",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:28"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 3306",
+      "id": "6ae49358fe4d302df0102b37",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:22"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 22",
+      "id": "6ae49358fe4d302df0102b36",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:20"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 1433",
+      "id": "6ae49358fe4d302df0102b35",
+      "ip": "45.33.32.156",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:12"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 445",
+      "id": "6ae49358fe4d302df0102b34",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:10"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 23",
+      "id": "6ae49358fe4d302df0102b33",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:06"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 3389",
+      "id": "6ae49358fe4d302df0102b32",
+      "ip": "91.240.118.172",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:05"
+    },
+    {
+      "criado_em": "2026-10-30 12:53:44",
+      "descricao": "Acesso bloqueado a porta critica 22",
+      "id": "6ae49358fe4d302df0102b31",
+      "ip": "185.220.101.1",
+      "lote": "logs:f7a6470977",
+      "origem": "regras",
+      "regra_id": "R002",
+      "regra_nome": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "timestamp": "2025-02-20 08:10:02"
+    }
+  ],
+  "gerado_em": "2026-10-30 12:53:45",
+  "ranking_risco": [
+    {
+      "ip": "91.240.118.172",
+      "nivel": "ALTO",
+      "rotulo": "ataque",
+      "score": 0.987
+    },
+    {
+      "ip": "45.33.32.156",
+      "nivel": "ALTO",
+      "rotulo": "ataque",
+      "score": 0.953
+    },
+    {
+      "ip": "185.220.101.1",
+      "nivel": "ALTO",
+      "rotulo": "ataque",
+      "score": 0.947
+    },
+    {
+      "ip": "192.168.1.10",
+      "nivel": "BAIXO",
+      "rotulo": "normal",
+      "score": 0.013
+    },
+    {
+      "ip": "10.0.0.5",
+      "nivel": "BAIXO",
+      "rotulo": "normal",
+      "score": 0.0
+    },
+    {
+      "ip": "192.168.1.20",
+      "nivel": "BAIXO",
+      "rotulo": "normal",
+      "score": 0.0
+    },
+    {
+      "ip": "192.168.1.45",
+      "nivel": "BAIXO",
+      "rotulo": "normal",
+      "score": 0.0
+    }
+  ],
+  "resumo": {
+    "alertas_por_severidade": {
+      "ALTA": 10,
+      "BAIXA": 0,
+      "CRITICA": 3,
+      "INFO": 0,
+      "MEDIA": 21
+    },
+    "eventos_por_fonte": {
+      "auth": 23,
+      "firewall": 17,
+      "web": 18
+    },
+    "top_ips": [
+      [
+        "185.220.101.1",
+        25
+      ],
+      [
+        "91.240.118.172",
+        11
+      ],
+      [
+        "45.33.32.156",
+        8
+      ],
+      [
+        "192.168.1.10",
+        5
+      ],
+      [
+        "10.0.0.5",
+        3
+      ],
+      [
+        "192.168.1.20",
+        3
+      ],
+      [
+        "192.168.1.45",
+        3
+      ]
+    ],
+    "total_eventos": 58
+  },
+  "total_alertas": 34
+}

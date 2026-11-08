@@ -1,0 +1,13 @@
+# Ambiente de laboratorio (Aulas 2, 3 e 7): MongoDB + MySQL
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo-lab
+    ports: ["27017:27017"]
+  mysql:
+    image: mysql:8
+    container_name: mysql-lab
+    ports: ["3306:3306"]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD:?defina MYSQL_PASSWORD no .env}
+      MYSQL_DATABASE: seguranca
