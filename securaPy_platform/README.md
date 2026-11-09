@@ -11,9 +11,9 @@ com **Docker Compose**. Enunciado: `gs_2semestre.md` do repositório da discipli
 | Nome | RM | Responsabilidade (preencher) |
 |------|----|------------------------------|
 | _a preencher_ | | Módulos A + B (núcleo + persistência) |
-|_a_preencher_ | rm571590 | Módulo C (machine learning) |
+| Pedro Rossi | 571590 | Módulo C (machine learning) |
 | _a preencher_ | | Módulos D + F (API + Docker) |
-| _a preencher_ | | Módulos E + G (dashboard + LLM) |
+| Elias Aguiar | 568932 | Módulos E + G (dashboard + LLM) |
 
 ## Como executar (Docker)
 
