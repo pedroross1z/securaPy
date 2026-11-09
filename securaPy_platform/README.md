@@ -7,13 +7,11 @@ com **Docker Compose**. Enunciado: `gs_2semestre.md` do repositório da discipli
 
 ## Integrantes e divisão de tarefas
 
-> ⚠️ **Preencher pelo grupo antes da entrega.** Este código foi produzido sem saber quem do grupo fez o quê;
-> a tabela abaixo é só o ponto de partida sugerido pelo enunciado (seção 7). Não deixe nomes/RMs em branco.
 
 | Nome | RM | Responsabilidade (preencher) |
 |------|----|------------------------------|
 | _a preencher_ | | Módulos A + B (núcleo + persistência) |
-| _a preencher_ | | Módulo C (machine learning) |
+| 571590 | | Módulo C (machine learning) |
 | _a preencher_ | | Módulos D + F (API + Docker) |
 | _a preencher_ | | Módulos E + G (dashboard + LLM) |
 
